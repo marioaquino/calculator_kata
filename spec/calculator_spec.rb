@@ -14,7 +14,7 @@ describe "Calculator" do
   end
   
   it "should handle addition and subtraction combined" do
-    Calculator::calculate("3 - 1 + 4 + 5 - 6").should == "5"
+    Calculator::calculate("3 - 1 + 24 + 5 - 6").should == "25"
   end
   
   it "should handle simple multiplication" do
