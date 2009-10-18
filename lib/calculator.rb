@@ -1,16 +1,17 @@
 module Calculator
   def self.calculate(expression)
     raise ArgumentError, 'Must be a string expression' unless expression.is_a? String
+    raise ArgumentError, 'Must be numeric arithmetic' unless expression =~ /\d\s[\+\-\*\/]\s\d/
     
-    operands = []
+    parts = []
     expression.split(/\s/).each do |val|
-      operands << val
-      if operands.size == 3
-        result = operands[0].to_i.send(operands[1].to_sym, operands[2].to_i)
-        operands.replace([result])
+      parts << val
+      if parts.size == 3
+        result = parts[0].to_i.send(parts[1].to_sym, parts[2].to_i)
+        parts.replace([result])
       end
     end
 
-    operands[0].to_s
+    parts[0].to_s
   end
 end

@@ -5,6 +5,10 @@ describe "Calculator" do
     lambda { Calculator::calculate(2) }.should raise_error(ArgumentError)
   end
   
+  it "should blow up if an invalid expression is supplied" do
+    lambda { Calculator::calculate("a + b") }.should raise_error(ArgumentError)
+  end
+  
   it "should handle simple addition" do
     Calculator::calculate("2 + 3").should == "5"
   end
