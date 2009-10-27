@@ -28,4 +28,8 @@ describe "Calculator" do
   it "should handle simple division" do
     Calculator::calculate("6 / 3").should == "2"
   end
+  
+  it "should honor left-right operator order precedence" do
+    Calculator::calculate("1 + 6 * 11 - 8 / 3").should == "23"
+  end
 end

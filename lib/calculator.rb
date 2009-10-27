@@ -3,16 +3,16 @@ module Calculator
     raise ArgumentError, 'Must be a string expression' unless expression.is_a? String
     raise ArgumentError, 'Must be numeric arithmetic' unless expression =~ pattern
     
-    parts = []
-    items = expression.scan(pattern) do |operand, operator|
-      parts[0] = parts.empty? ? operand : parts[0].to_i.send(parts[1], operand.to_i)
-      parts[1] = operator
+    value = nil
+    expression.scan(pattern) do |left, operator, right|
+      value ||= left
+      value = eval(value + operator + right).to_s
     end
-    parts[0].to_s
+    value
   end
   
   private
   def self.pattern
-    /(\d+)\s?([\+\-\*\/]?)/
+    /(\d+)\s?([\+\-\*\/])\s*(?=(\d+))/
   end
 end
