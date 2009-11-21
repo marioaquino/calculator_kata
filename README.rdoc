@@ -24,7 +24,7 @@ This is a left-to-right evaluation, binary simple arithmetic calculator.  The im
     e.g. Calculator->calculate("6 / 3") == "2"
   
   it should honor left-right operator order precedence:
-    e.g. Calculator::calculate("1 + 6 * 11 - 8 / 3") == "23"
+    e.g. Calculator->calculate("1 + 6 * 11 - 8 / 3") == "23"
 
 == Note on Patches/Pull Requests
  
