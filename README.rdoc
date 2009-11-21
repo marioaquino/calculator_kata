@@ -1,6 +1,30 @@
 = calculator_kata
 
-Description goes here.
+This is a left-to-right evaluation, binary simple arithmetic calculator.  The implementation should accept an expression as a string and return the evaluation of the expression as a string.  The following examples show expected usages and results:
+
+  it should blow-up if a non-string expression is supplied:
+	e.g. Calculator->calculate(2)
+  
+  it should blow-up if an invalid expression is supplied:
+    e.g. Calculator->calculate("a + b")
+  
+  it should handle simple addition:
+    e.g. Calculator->calculate("2 + 3") == "5"
+  
+  it should handle simple subtraction:
+    e.g. Calculator->calculate("3 - 1") == "2"
+  
+  it should handle addition and subtraction combined:
+    e.g. Calculator->calculate("3 - 1 + 24 + 5 - 6") == "25"
+  
+  it should handle simple multiplication:
+    e.g. Calculator->calculate("3 * 2") == "6"
+  
+  it should handle simple division:
+    e.g. Calculator->calculate("6 / 3") == "2"
+  
+  it should honor left-right operator order precedence:
+    e.g. Calculator::calculate("1 + 6 * 11 - 8 / 3") == "23"
 
 == Note on Patches/Pull Requests
  
